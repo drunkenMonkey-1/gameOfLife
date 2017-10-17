@@ -119,7 +119,9 @@ public class MainWnd extends Application {
                 }
             };
             //task.messageProperty().addListener((obs, oldMessage, newMessage) -> );
-            new Thread(task).start();
+            Thread t = new Thread(task);
+            t.setDaemon(true);
+            t.start();
         });
         infectBtn.setOnAction(event -> game.infectRandomCell(_infectionProbability));
         cfgBtn.setOnAction(event -> {
