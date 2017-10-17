@@ -1,0 +1,17 @@
+{"torus":false,"initCells":[
+	{"ypos":100,"xpos":150,"state":"ALIVE"},
+	{"ypos":101,"xpos":152,"state":"ALIVE"},
+	{"ypos":100,"xpos":151,"state":"ALIVE"},
+	{"ypos":105,"xpos":150,"state":"ALIVE"},
+	{"ypos":105,"xpos":152,"state":"ALIVE"},
+	{"ypos":103,"xpos":154,"state":"ALIVE"},
+	{"ypos":104,"xpos":152,"state":"ALIVE"},
+	{"ypos":102,"xpos":151,"state":"ALIVE"},
+	{"ypos":99,"xpos":153,"state":"ALIVE"},
+	{"ypos":106,"xpos":149,"state":"ALIVE"},
+	{"ypos":107,"xpos":149,"state":"ALIVE"},
+	{"ypos":108,"xpos":148,"state":"ALIVE"},
+	{"ypos":103,"xpos":150,"state":"ALIVE"},
+	{"ypos":101,"xpos":151,"state":"ALIVE"},
+	]
+,"fieldY":200,"fieldX":300}

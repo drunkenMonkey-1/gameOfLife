@@ -1,0 +1,1 @@
+{"torus":false,"initCells":[{"ypos":24,"xpos":20,"state":"ALIVE"},{"ypos":24,"xpos":21,"state":"ALIVE"},{"ypos":24,"xpos":22,"state":"ALIVE"},{"ypos":23,"xpos":21,"state":"ALIVE"},{"ypos":25,"xpos":21,"state":"ALIVE"}],"fieldY":200,"fieldX":300}

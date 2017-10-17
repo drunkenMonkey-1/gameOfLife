@@ -1,15 +1,17 @@
 import javafx.scene.Group;
 
+import java.util.Random;
+
 public class GameOfLife {
 
-
     public static GameConfig _config;
+    private boolean _infect = false;
     private static Cell[][] _gameGrid;
+    private int _infectionProbability;
+    private Random rnd = new Random();
 
     public GameOfLife(GameConfig cfg){
-        _config = cfg;
-        _gameGrid = new Cell[_config.get_fieldX()][_config.get_fieldY()];
-        initGameGrid();
+        loadConfig(cfg);
     }
 
     public void initGameGrid(){
@@ -37,6 +39,19 @@ public class GameOfLife {
         return _gameGrid;
     }
 
+    public void loadConfig(GameConfig cfg){
+        _config = cfg;
+        _gameGrid = new Cell[_config.get_fieldX()][_config.get_fieldY()];
+        initGameGrid();
+    }
+
+    public void infectRandomCell(int infectionProbability){
+        _infectionProbability = infectionProbability;
+        _infect = true;
+        nextGeneration(1);
+        _infect = false;
+    }
+
     /**
      *
      * @param steps
@@ -47,14 +62,24 @@ public class GameOfLife {
                 for(int y = 0; y < _config.get_fieldY(); y++){
                    CellGrid smallGrid = new CellGrid(_gameGrid[x][y]);
                    int adCells = smallGrid.getNumberOfAliveNeighbours();
+                   int infCells = smallGrid.getInfectedCount();
                    if(adCells < 2 && _gameGrid[x][y].getState() != CellState.DEAD){
                        _gameGrid[x][y].setNextState(CellState.DEAD);
                    }
                    else if(adCells == 3 && _gameGrid[x][y].getState() != CellState.ALIVE) {
-                       _gameGrid[x][y].setNextState(CellState.ALIVE);
+                       if(_infect == true){
+                            if((rnd.nextInt()%100) <= _infectionProbability){
+                                _gameGrid[x][y].setNextState(CellState.INFECTED);
+                            }
+                       } else {
+                           _gameGrid[x][y].setNextState(CellState.ALIVE);
+                       }
                    }
                    else if(adCells > 3 && _gameGrid[x][y].getState() != CellState.DEAD){
                         _gameGrid[x][y].setNextState(CellState.DEAD);
+                   }
+                   else if(infCells >= 1 && _gameGrid[x][y].getState() != CellState.DEAD && _gameGrid[x][y].getState() != CellState.INFECTED){
+                       _gameGrid[x][y].setNextState(CellState.INFECTED);
                    }
                 }
             }
