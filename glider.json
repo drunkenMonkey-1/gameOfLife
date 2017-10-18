@@ -1,0 +1,12 @@
+{"torus":false,"initCells":[
+	{"ypos":5,"xpos":5,"state":"ALIVE"},
+	{"ypos":6,"xpos":6,"state":"ALIVE"},
+	{"ypos":7,"xpos":6,"state":"ALIVE"},
+	{"ypos":7,"xpos":5,"state":"ALIVE"},
+	{"ypos":7,"xpos":4,"state":"ALIVE"},
+	{"ypos":195,"xpos":195,"state":"ALIVE"},
+	{"ypos":196,"xpos":193,"state":"ALIVE"},
+    {"ypos":195,"xpos":193,"state":"ALIVE"},	
+	{"ypos":194,"xpos":193,"state":"ALIVE"},
+	{"ypos":194,"xpos":194,"state":"ALIVE"},
+	],"fieldY":200,"fieldX":200}

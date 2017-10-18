@@ -15,8 +15,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
@@ -144,8 +142,8 @@ public class MainWnd extends Application {
         VBox combi = new VBox(controlGroup, gameRoot);
 
 
-        Scene scene = new Scene(combi, gameCfg.get_fieldX() * CellPosition.get_cellPxSize(),
-                                          (gameCfg.get_fieldY() * CellPosition.get_cellPxSize()), Color.TRANSPARENT);
+        Scene scene = new Scene(combi, (gameCfg.get_fieldX() * CellPosition.get_cellPxSize())+25,
+                                          (gameCfg.get_fieldY() * CellPosition.get_cellPxSize()) + 30, Color.TRANSPARENT);
 
         primaryStage.setTitle("Game of Life");
         primaryStage.setScene(scene);
